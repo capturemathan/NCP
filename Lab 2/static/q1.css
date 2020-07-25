@@ -1,0 +1,83 @@
+.row {
+    display: flex;
+  }
+.column {
+    flex: 50%;
+  }
+.input1{
+    width: 100%;
+    margin-top: 1%;
+    line-height: 2.5em;
+}
+.label{
+    font-weight: bolder;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+select{
+    width: 100%;
+    margin-top: 1%;  
+}
+.birth{
+    height: 100%;
+}
+.row2{
+    display: flex;
+  }
+.column2{
+    flex: 50%;
+  }
+.input2{
+    width: 85%; 
+    line-height: 2.5em;
+    margin-top: 1%;
+}
+#username::placeholder{
+    text-align: right;
+    padding-right: 10px;
+}
+.input2::placeholder{
+    padding-left: 10px;
+}
+.row3{
+    display: flex;
+}
+.column3{
+    flex: 50%;
+  }
+.input3{
+    margin-left: 10px;
+    line-height: 2.5em;
+    margin-top: 1%;
+}
+.col-2{
+    margin-left: 10%;
+    margin-top: 3%;
+    margin-right: 1%;
+}
+.col-1{
+    margin-left: 0.5%;
+    margin-top: 2%;
+}
+input[type="checkbox"]{
+    margin-top: 10px;
+}
+.gender{
+    height: 100%;
+}
+.location{
+    height: 8%;
+}
+img{
+margin-top: 2%;
+}
+button{
+    width: 20%;
+    margin-top: 5%;
+    height: 8%;
+    background-color: #023e8a;
+    color: white;
+    font-weight: bolder;
+    border-radius: 10px;
+    float: right;
+}

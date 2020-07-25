@@ -1,0 +1,25 @@
+h2{
+    color: brown;
+    margin-left: 2%;
+}
+.col-group{
+    display: flex;
+    flex-direction: column;
+}
+.col{
+    flex:1;   
+}
+.row {
+    display: flex;
+  }
+.column {
+    display: inline-block;
+  }
+h3{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.innertext{
+    margin-left: 2%;
+    margin-right: 2%;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./static/q1.css">
+</head>
+<body>
+
+<div class="row">
+  <div class="column col-1">
+    <form>
+        <div class="label">Name</div>
+        <div class="row2">
+            <div class="column2">
+                <input type="text" class="input2" placeholder="First">
+            </div>
+            <div class="column2">
+                <input type="text" class="input2" placeholder="Last">
+            </div>
+        </div>
+        <div class="label">Choose your username</div>
+        <input type="text" class="input1" placeholder="@gmail.com" id="username">
+        <div class="label">Create a password</div>
+        <input type="text" class="input1">
+        <div class="label">Confirm your password</div>
+        <input type="text" class="input1">
+        <div class="label">Birthday</div>
+        <div class="row3">
+            <div class="column3">
+                <select name="Birthday" class="birth">
+                    <option value="" disabled selected>Month</option>
+                    <option value="Sept">September</option>
+                    <option value="Oct">October</option>
+                </select>
+            </div>
+            <div class="column3">
+                <input type="text" class="input3" placeholder="Day">
+            </div>
+            <div class="column3">
+                <input type="text" class="input3" placeholder="Year">
+            </div>
+        </div>   
+        <div class="label">Gender</div>
+        <select name="gender" class="gender">
+            <option value="" disabled selected>Iam</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <div class="label">Mobile Phone</div>
+        <input type="text" class="input1" placeholder="+91">
+        <div class="label">Your current email address</div>
+        <input type="text" class="input1">
+    </form>
+  </div>
+  <div class="column col-2">
+    <div class="label">Prove you're not a robot</div>
+    <div><input type="checkbox">Skip this verification. Phone Verification required</div>
+    <img src="./assets/captcha.jpg" height="250px">
+    <select name="Birthday" class="location">
+        <option value="" disabled selected>Location</option>
+        <option value="India">India</option>
+    </select>
+    <div><input type="checkbox"> I agree to Google Terms of Service and Policies</div>
+    <div><input type="checkbox"> Google may use my account information to personalize +1's on content </div>
+    <button>Next Step</button>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+body{
+margin-left: 50px;
+margin-right: 50px;
+}
+.myname{
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: larger;
+    color: brown;
+}
+
+.myinfo{
+    margin-top: 20px;
+}
+
+.flex-parent {
+    display: flex;
+  }
+.flex-child {
+    flex: 1;
+  }
+
+.val{
+    margin-left: 10px;
+}
+.key{
+    font-weight: bolder;
+}
+.inline-block-child {
+    display: inline-block;
+  } 
+.info{
+    float: left;
+} 
+.year{
+    float: left;
+}
+.edu{
+    margin-left: 50px;
+}
+.degree{
+    font-weight: bolder;
+    font-size: large;
+} 
+.parent{
+    margin-top: 20px;
+}
+h3{
+    margin-top: 30px;
+    color: brown;
+}

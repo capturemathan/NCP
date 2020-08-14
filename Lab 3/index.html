@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AWS Mock</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>    
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+          <div class="navbar-start">
+            <div class="navbar-item">
+              <div class="menubar">AWS Educate</div>
+            </a>
+          </div>
+          </div>
+        <div id="navbarContents" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+                <a href="#" id="nav-spacing" onclick="load_content()">Content</a>
+                <a href="#" id="nav-spacing" onclick="load_classroom()">Classroom and Credits</a>
+                <a href="" id="nav-spacing">Professional Resources</a>
+                <a href="" id="nav-spacing">AWS Account</a>
+                <a href="" id="nav-spacing">Profile</a>
+            </div>
+          </div>
+        </div>
+        </nav>
+        <section class="section">
+            <div class="columns is-vcentered col-1 is-full">
+                <div class="column is-1">
+                    <img src="./assets/avatar.png" class="profile">
+                </div>
+                <div class="column is-2" id="myname">
+                    Mathana Kumar S
+                </div>
+                <div class="column is-offset-7">
+                    <div class="dropdown is-active">
+                        <div class="dropdown-trigger">
+                          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <span>English</span>
+                            <span class="icon is-small">
+                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div id="main-container">
+            <div class="welcometext">Hi, welcome back to Educate</div>
+            <div class="columns">
+                <div class="column is-one-third">
+                    <img src="./assets/computer.png">
+                </div>
+                <div class="column is-one-third">
+                <div class="subcol-head">
+                  Supporting the rapid transition to Online Learning
+                </div>
+                <div class="subcol-text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vero quidem quaerat impedit nostrum tempore magni error consectetur eligendi! Nobis architecto quisquam optio quam. Consectetur id et modi rerum soluta.
+                </div>
+                <a href="https://capturemathan.github.io" target="_blank">Sign up for webinars and virtual office hours</a>
+                </div>
+                <div class="column is-one-third">
+                <div class="subcol-head-big">
+                  Featured Content
+                </div>
+                <div class="box">
+                  <a href="https://capturemathan.github.io">AWS Educate webinars and office hours</a>
+                  <div class="subcol-text">
+                    Webinars, Office Hours and Training Sessions for Educators and Students
+                  </div>
+                </div>
+                <div class="box">
+                  <a href="https://capturemathan.github.io">Getting Started Resource Center</a>
+                  <div class="subcol-text">
+                    One stop Resource to get up to speed with AWS Educate
+                  </div>
+                </div>
+                </div>
+            </div>   
+            </div> 
+        </section>
+<script>
+  function load_content(){
+    document.getElementById("main-container").innerHTML='<object data="content.html"></object>';
+  }
+  function load_classroom(){
+    document.getElementById("main-container").innerHTML='<object data="classroom.html"></object>';
+  }
+</script>
+</body>
+</html>

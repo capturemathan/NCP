@@ -1,0 +1,38 @@
+body{
+    font-family: 'Lato';
+    color: black;
+}
+#nav-spacing{
+    margin-right: 15px;
+}
+a:hover{
+    color: black;
+}
+#myname{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.welcometext{
+    font-size: 2rem;
+}
+.col-1{
+    background-color: #e0e0e0;
+}
+.subcol-head{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.subcol-head-big{
+    font-size: 1.8rem;
+}
+.profile{
+    padding-top: 18px;
+}
+.subcol-text{
+    margin-top: 10px;
+}
+.menubar{
+    font-size: 1.3rem;
+    color: black;
+    font-weight: bold;
+}

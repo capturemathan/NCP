@@ -37,3 +37,23 @@ a:hover{
     color: black;
     font-weight: bold;
 }
+.yellow-head{
+    color: #ff9900;
+    font-size: 1.4rem;
+}
+.sub-1{
+    margin-top: 5px;
+    font-size: 1.1em;
+    color: black;
+}
+.sub-2{
+    margin-top: 5px;
+    font-weight: bold;
+}
+.sub-3{
+    margin-top: 5px;
+    font-size: 1.1em;
+}
+#dropdown-gap{
+    margin-top: 15px;
+}

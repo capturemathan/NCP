@@ -1,0 +1,158 @@
+<!--
+ Copyright (c) 2020 | Mathana Kumar S (https://capturemathan.github.io)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <p class="heading has-text-centered">Add new Employee</p>
+    </header>
+    <article class="message is-small is-danger" id="message-head">
+        <div class="message-header">
+          <p id="mymessage">Hello World</p>
+          <button class="delete" aria-label="delete"></button>
+        </div>
+    </article>
+    <main>
+        <div class="columns is-centered">
+            <div class="column is-2">
+            </div>
+            <div class="column is-8">
+                <div class="box">
+                    <form action="" name="myform" onsubmit="return validateForm()" method="POST">
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                              <label class="label">Employee ID</label>
+                            </div>
+                            <div class="field-body">
+                              <div class="field">
+                                <div class="control">
+                                  <input class="input" type="text" placeholder="107" name="empid">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                              <label class="label">Employee Name</label>
+                            </div>
+                            <div class="field-body">
+                              <div class="field">
+                                <div class="control">
+                                  <input class="input" type="text" placeholder="Mathana Kumar" name="empname">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                              <label class="label">Qualification</label>
+                            </div>
+                            <div class="field-body">
+                              <div class="field">
+                                <div class="control">
+                                  <input class="input" type="text" placeholder="10" name="empqual">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                              <label class="label">Designation</label>
+                            </div>
+                            <div class="field-body">
+                              <div class="field">
+                                <div class="control">
+                                  <div class="select is-fullwidth">
+                                    <select>
+                                      <option>Sales Boy</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                              <label class="label">Salary</label>
+                            </div>
+                            <div class="field-body">
+                              <div class="field">
+                                <div class="control">
+                                  <input class="input" type="text" placeholder="1000" name="empsal">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="buttons has-addons is-centered">
+                            <input class="button" type="submit" value="Add Record">
+                            <input class="button" type="reset" value="Exit">
+                          </div>                          
+                    </form>
+                </div>
+            </div>
+            <div class="column is-2">
+            </div>
+        </div>
+    </main>
+<script>
+function validateForm(){
+    /* Form Selectors */
+    var myform=document.forms["myform"];
+    var empid=myform["empid"].value;
+    var empname=myform["empname"].value;
+    var empqual=myform["empqual"].value;
+    var empsal=myform["empsal"].value;
+    
+    /* REGEX Checkers */
+    var numbers = /^[0-9]+$/;
+    var letters = /^[A-Za-z]+$/;
+    var letterNumber = /^[0-9a-zA-Z]+$/;
+
+    if(document.getElementById("message-head").classList.contains("is-success")){
+        document.getElementById("message-head").classList.remove('is-success');
+        document.getElementById("message-head").classList.add('is-danger');
+    }
+
+    if(!empid.match(numbers)){
+        document.getElementById("mymessage").innerHTML="Employee ID should be a number";
+        document.getElementById("message-head").style.visibility="visible";
+        document.forms["myform"]["empid"].focus();
+        return false
+    }
+    if(!empname.match(letters)){
+        document.getElementById("mymessage").innerHTML="Employee Name should contain only alphabets";
+        document.getElementById("message-head").style.visibility="visible";
+        document.forms["myform"]["empname"].focus();
+        return false
+    }
+    if(!empqual.match(letterNumber)){
+        document.getElementById("mymessage").innerHTML="Qualification should contain only alphabets & Numbers";
+        document.getElementById("message-head").style.visibility="visible";
+        document.forms["myform"]["empqual"].focus();
+        return false
+    }
+    if(!empsal.match(numbers)){
+        document.getElementById("mymessage").innerHTML="Salary should be a number";
+        document.getElementById("message-head").style.visibility="visible";
+        document.forms["myform"]["empsal"].focus();
+        return false
+    }
+    
+    /* Successful Form Submission */
+    document.getElementById("mymessage").innerHTML="Successful Submission made";
+    document.getElementById("message-head").classList.remove('is-danger');
+    document.getElementById("message-head").classList.add('is-success');
+    return false;
+}
+</script>
+</body>
+</html>

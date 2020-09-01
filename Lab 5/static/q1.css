@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) 2020 | Mathana Kumar S (https://capturemathan.github.io)
+ */
+ .heading{
+    color: blueviolet;
+    font-family: 'Lato';
+    font-weight: bolder;
+    letter-spacing: 3px;
+    font-size: 1.4em;
+    font-style: italic;
+    margin-top: 3%;
+}
+.label{
+    position: absolute;
+    font-family: 'Lato';
+}
+input{
+    font-family: 'Quicksand';
+}
+button{
+    font-family: 'Quicksand';
+}
+.message{
+    margin-left: 25%;
+    margin-right: 25%;
+    font-family: 'Lato';
+    visibility: hidden;
+    font-weight: lighter;
+}
+#mytable{
+    margin: 20px;
+    font-family: 'Lato';
+}

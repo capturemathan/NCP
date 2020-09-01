@@ -1,0 +1,102 @@
+<!--
+ Copyright (c) 2020 | Mathana Kumar S (https://capturemathan.github.io)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/q1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <p class="heading has-text-centered">Multiplication Table Generator</p>
+    </header>
+    <article class="message is-small is-danger" id="message-head">
+        <div class="message-header">
+          <p id="mymessage">Hello World</p>
+          <button class="delete" aria-label="delete"></button>
+        </div>
+    </article>
+    <main>
+        <div class="columns is-centered">
+            <div class="column is-2">
+            </div>
+            <div class="column is-8">
+                <div class="box">
+                    <form name="myform" method="POST">
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                              <label class="label">Rows</label>
+                            </div>
+                            <div class="field-body">
+                              <div class="field">
+                                <div class="control">
+                                  <input class="input" type="number" placeholder="10" name="row">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                              <label class="label">Columns</label>
+                            </div>
+                            <div class="field-body">
+                              <div class="field">
+                                <div class="control">
+                                  <input class="input" type="number" placeholder="10" name="col">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="buttons is-centered">
+                            <input class="button" type="button" value="Generate"  onclick="validateForm()">
+                          </div>                          
+                    </form>
+                </div>
+            </div>
+            <div class="column is-2">
+            </div>
+        </div>
+        <div class="table-container">
+            <table class="table is-hoverable is-fullwidth is-bordered" id="mytable">
+              
+            </table>
+        </div>
+    </main>
+<script>
+function validateForm(){
+    /* Form Selectors */
+    document.getElementById("mytable").innerHTML="";
+    var myform=document.forms["myform"];
+    var row=parseInt(myform["row"].value,10);
+    var col=parseInt(myform["col"].value,10);
+    console.log(row);
+    console.log(col);
+    if (row<=0 || col<=0){
+        document.getElementById("mymessage").innerHTML="Please enter a Positive Number";
+        document.getElementById("message-head").style.visibility="visible";
+    }
+    else{
+        var mytable=document.getElementById("mytable");
+        var h = mytable.insertRow();
+        for(var j=0;j<col;j++){
+            var headerCell = document.createElement("TH");
+            headerCell.innerHTML = "*" + (j+1);
+            h.appendChild(headerCell);
+        }
+        for(var i=0;i<row;i++){
+            var r = mytable.insertRow(-1);
+            for(var j=0;j<col;j++){
+                var c= r.insertCell(-1);
+                c.innerHTML= (i+1)*(j+1)
+            }
+        }
+    }   
+}
+</script>
+</body>
+</html>

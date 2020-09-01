@@ -1,0 +1,94 @@
+<!--
+ Copyright (c) 2020 | Mathana Kumar S (https://capturemathan.github.io)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/q4.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body onload="getTime()">
+    <header>
+        <p class="heading has-text-centered">What's the time</p>
+    </header>
+    <main>
+        <div class="columns is-centered">
+            <div class="column is-3">
+            </div>
+            <div class="column is-6">
+                <div class="box">
+                    <div class="columns" id="side-items">
+                        <div class="column is-3 has-text-centered">
+                            Alarm at 6:40
+                        </div>
+                        <div class="column is-offset-6 has-text-centered" id="day">
+                            Saturday
+                        </div>
+                    </div>
+                    <div class="columns has-text-centered" id="time">
+                        <div class="column is-offset-2 is-2" id="hh">
+                            20
+                        </div>
+                        <div class="column is-1" id="sep">
+                            :
+                        </div>
+                        <div class="column is-2" id="mm">
+                            20
+                        </div>
+                        <div class="column is-1" id="sep">
+                            :
+                        </div>
+                        <div class="column is-2" id="ss">
+                            20
+                        </div>
+                    </div>
+                    <div class="columns" id="side-items">
+                        <div class="column is-3 has-text-centered">
+                            Battery at 58%
+                        </div>
+                        <div class="column is-offset-6 has-text-centered">
+                            <div class="columns">
+                                <div class="column is-1" id="date">
+                                    08
+                                </div>
+                                <div class="column is-1" id="sep">
+                                    -
+                                </div>
+                                <div class="column is-1" id="month">
+                                    09
+                                </div>
+                                <div class="column is-1" id="sep">
+                                    -
+                                </div>
+                                <div class="column is-1" id="year">
+                                    1999
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3">
+            </div>
+        </div>
+    </main>
+<script>
+    function getTime(){
+    var d= new Date();
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    document.getElementById("date").innerHTML=d.getDate();
+    document.getElementById("month").innerHTML=d.getMonth();
+    document.getElementById("year").innerHTML=d.getFullYear();
+    document.getElementById("hh").innerHTML=(d.getHours())<=9?"0"+d.getHours():d.getHours();
+    document.getElementById("mm").innerHTML=(d.getMinutes())<=9?"0"+d.getMinutes():d.getMinutes();
+    document.getElementById("ss").innerHTML=(d.getSeconds())<=9?"0"+d.getSeconds():d.getSeconds();
+    document.getElementById("day").innerHTML=days[d.getDay()];
+    setTimeout(getTime,500);
+    }
+</script>
+</body>
+</html>

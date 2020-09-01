@@ -1,0 +1,22 @@
+/*
+ * Copyright (c) 2020 | Mathana Kumar S (https://capturemathan.github.io)
+ */
+ .heading{
+    color: blueviolet;
+    font-family: 'Lato';
+    font-weight: bolder;
+    letter-spacing: 3px;
+    font-size: 1.4em;
+    font-style: italic;
+    margin-top: 3%;
+}
+#time{
+    font-family: 'Lato';
+    font-weight: bolder;
+    font-size: 1.5em;
+    color: black;
+}
+#side-items{
+    font-family: 'Quicksand';
+    font-size: 1.2em;
+}

@@ -1,0 +1,44 @@
+/*
+ * Copyright (c) 2020 | Mathana Kumar S (https://capturemathan.github.io)
+ */
+.heading{
+    color: blueviolet;
+    font-family: 'Lato';
+    font-weight: bolder;
+    letter-spacing: 3px;
+    font-size: 1.4em;
+    font-style: italic;
+    margin-top: 3%;
+}
+.item {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Special Elite';
+    color: black;
+    font-size: 1.1em;
+}
+.description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 10px;
+}
+.description:after {
+    content: " .............................................................................................................................................................................................................."
+}
+.page {
+    flex-shrink: 0;
+}
+.label{
+    position: absolute;
+    font-family: 'Lato';
+}
+input{
+    font-family: 'Quicksand';
+}
+button{
+    font-family: 'Quicksand';
+}
+#items{
+    margin-top: 2%;
+}

@@ -1,0 +1,155 @@
+<!--
+ Copyright (c) 2020 | Mathana Kumar S (https://capturemathan.github.io)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 5</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/q5.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&family=Poppins&family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body onload="getCharacter()">
+    <header>
+        <p class="heading has-text-centered">Frequency of character Roles (Uses Random)</p>
+    </header>
+    <main>
+        <div class="columns is-centered">
+            <div class="column is-2">
+            </div>
+            <div class="column is-8">
+                <div class="box">
+                    <div id="char-display" class="has-text-centered">
+                    </div>
+                    <div id="role-display-a" class="has-text-centered role-display">
+                    </div>
+                    <div id="role-display-b" class="has-text-centered role-display">
+                    </div>
+                    <div id="role-display-c" class="has-text-centered role-display">
+                    </div>
+                    <div id="role-display-d" class="has-text-centered role-display">
+                    </div>
+                    <div id="role-display-e" class="has-text-centered role-display">
+                    </div>
+                    <div class="columns has-text-centered" id="freq">
+                            <div class="column is-6">
+                                Frequency of Roles for A
+                                <div id="freq-a">
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                Frequency of Roles for B
+                                <div id="freq-b">
+                                </div>
+                            </div>
+                    </div>
+                    <div class="columns has-text-centered">
+                        <div class="column is-6">
+                            Frequency of Roles for C
+                            <div id="freq-c">
+                            </div>
+                        </div>
+                        <div class="column is-6">
+                            Frequency of Roles for D
+                            <div id="freq-d">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns has-text-centered">
+                        <div class="column">
+                            Frequency of Roles for E
+                            <div id="freq-e">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-2">
+            </div>
+        </div>
+    </main>
+<script>
+    function getCharacter(){
+        var characters=["Dad","Mom","Brother","Sister","Uncle"]
+        document.getElementById("char-display").innerHTML="The available roles are: "+characters;
+        var a=[]
+        var b=[]
+        var c=[]
+        var d=[]
+        var e=[]
+        var freqa={}
+        var freqb={}
+        var freqc={}
+        var freqd={}
+        var freqe={}
+        for(var i=0;i<10;i++){
+            a.push(characters[Math.floor(Math.random() * 5)]);
+        }
+        for(var i=0;i<10;i++){
+            b.push(characters[Math.floor(Math.random() * 5)]);
+        }
+        for(var i=0;i<10;i++){
+            c.push(characters[Math.floor(Math.random() * 5)]);
+        }
+        for(var i=0;i<10;i++){
+            d.push(characters[Math.floor(Math.random() * 5)]);
+        }
+        for(var i=0;i<10;i++){
+            e.push(characters[Math.floor(Math.random() * 5)]);
+        }
+        document.getElementById("role-display-a").innerHTML="A's Roles - "+a;
+        document.getElementById("role-display-b").innerHTML="B's Roles - "+b;
+        document.getElementById("role-display-c").innerHTML="C's Roles - "+c;
+        document.getElementById("role-display-d").innerHTML="D's Roles - "+d;
+        document.getElementById("role-display-e").innerHTML="E's Roles - "+e;
+        for(var i=0;i<a.length;i++){
+            if(freqa[a[i]]){
+                freqa[a[i]]++;
+            }
+            else{
+                freqa[a[i]]=1
+            }
+        }
+        document.getElementById("freq-a").innerHTML=JSON.stringify(freqa);
+        for(var i=0;i<b.length;i++){
+            if(freqb[b[i]]){
+                freqb[b[i]]++;
+            }
+            else{
+                freqb[b[i]]=1
+            }
+        }
+        document.getElementById("freq-b").innerHTML=JSON.stringify(freqb);
+        for(var i=0;i<c.length;i++){
+            if(freqc[c[i]]){
+                freqc[c[i]]++;
+            }
+            else{
+                freqc[c[i]]=1
+            }
+        }
+        document.getElementById("freq-c").innerHTML=JSON.stringify(freqc);
+        for(var i=0;i<d.length;i++){
+            if(freqd[d[i]]){
+                freqd[d[i]]++;
+            }
+            else{
+                freqd[d[i]]=1
+            }
+        }
+        document.getElementById("freq-d").innerHTML=JSON.stringify(freqd);
+        for(var i=0;i<e.length;i++){
+            if(freqe[e[i]]){
+                freqe[e[i]]++;
+            }
+            else{
+                freqe[e[i]]=1
+            }
+        }
+        document.getElementById("freq-e").innerHTML=JSON.stringify(freqe);
+    }
+</script>
+</body>
+</html>

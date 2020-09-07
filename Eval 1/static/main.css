@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) 2020 | Mathana Kumar S (https://capturemathan.github.io)
+ */
+body{
+    color: black;
+}
+.header{
+    font-family: 'Poppins';
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.innertext{
+    font-family: 'Lato';
+    font-size: 0.9em;
+    padding-right: 20px;
+}
+.label{
+    font-family: 'Poppins';
+    color: black
+}
+input{
+    font-family: 'Lato';
+}

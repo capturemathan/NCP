@@ -38,3 +38,6 @@ img{
     visibility: hidden;
     font-weight: lighter;
 }
+#bg-grey{
+    background-color: lightgray;
+}

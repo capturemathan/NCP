@@ -30,6 +30,19 @@
     </div>
   </nav>
 <body>
+  <div class="columns">
+    <div class="column is-6">
+      <div class="main-header">Create a new Google Account</div>
+    </div>
+    <div class="column is-5">
+      <article class="message is-small is-danger" id="message-head">
+        <div class="message-header">
+          <p id="mymessage">Hello World</p>
+          <button class="delete" aria-label="delete"></button>
+        </div>
+      </article>
+    </div>
+  </div>
     <div class="columns">
         <div class="column is-6">
             <div class="columns">
@@ -78,22 +91,22 @@
             </div>
         </div>
         <div class="column is-5">
-            <form action="">
+            <form name="myform" method="POST">
                 <label class="label">Name</label>
                 <div class="field is-horizontal">                  
                     <div class="field-body">
                       <div class="field">
-                          <input class="input" type="text" placeholder="First">
+                          <input class="input" type="text" placeholder="First" name="fname">
                       </div>
                       <div class="field">
-                          <input class="input" type="text" placeholder="Last">
+                          <input class="input" type="text" placeholder="Last" name="lname">
                       </div>
                     </div>
                   </div>  
                   <label class="label">Choose your username</label>
                   <div class="field has-addons is-fullwidth">
                     <div class="control">
-                      <input class="input" type="text" placeholder="">
+                      <input class="input" type="text" placeholder="" name="uname">
                     </div>
                     <p class="control">
                       <a class="button is-static">
@@ -104,26 +117,26 @@
                   <div class="field">
                     <label class="label">Create a password</label>
                     <div class="control">
-                      <input class="input" type="password" placeholder="secret">
+                      <input class="input" type="password" placeholder="secret" name="pwd">
                     </div>
                   </div>
                   <div class="field">
                     <label class="label">Confirm your password</label>
                     <div class="control">
-                      <input class="input" type="password" placeholder="secret">
+                      <input class="input" type="password" placeholder="secret" name="cpwd">
                     </div>
                   </div>
                   <label class="label">Birthday</label>
                   <div class="field is-horizontal">                  
                     <div class="field-body">
                       <div class="field">
-                          <input class="input" type="text" placeholder="Month">
+                          <input class="input" type="text" placeholder="Month" name="mm" required>
                       </div>
                       <div class="field">
-                          <input class="input" type="text" placeholder="Day">
+                          <input class="input" type="text" placeholder="Day" name="dd" required>
                       </div>
                       <div class="field">
-                        <input class="input" type="text" placeholder="Year">
+                        <input class="input" type="text" placeholder="Year" name="yy" required>
                     </div>
                     </div>
                   </div>
@@ -131,7 +144,7 @@
                     <label class="label">Gender</label>
                     <div class="control">
                       <div class="select is-fullwidth">
-                        <select>
+                        <select id="gender">
                           <option>Male</option>
                           <option>Female</option>
                         </select>
@@ -148,25 +161,23 @@
                       </span>
                     </p>
                     <div class="control">
-                      <input class="input" type="number" placeholder="">
+                      <input class="input" type="text" placeholder="" name="phone">
                     </div>
                   </div>
                   <div class="field">
                     <label class="label">Your current email address</label>
                     <div class="control">
-                      <input class="input" type="email" placeholder="secret">
+                      <input class="input" type="email" placeholder="capturesmk@gmail.com" name="oldmail">
                     </div>
                   </div>
                   <label class="label">Prove you aren't a robot</label>
                   <div class="field is-horizontal">                  
                     <div class="field-body">
-                    <fieldset disabled>
                       <div class="field">
-                          <input class="input" type="text">
+                          <input class="input" type="text" name="showcap" id="showcap" value="1234" readonly>
                       </div>
-                    </fieldset>
                       <div class="field">
-                          <input class="input" type="text" placeholder="Enter the CAPTCHA">
+                          <input class="input" type="text" placeholder="Enter the CAPTCHA" name="entercap">
                       </div>
                     </div>
                   </div>  
@@ -174,7 +185,7 @@
                     <label class="label">Location</label>
                     <div class="control">
                       <div class="select is-fullwidth">
-                        <select>
+                        <select id="location">
                           <option>India</option>
                         </select>
                       </div>
@@ -183,7 +194,7 @@
                   <div class="field">
                     <div class="control">
                       <label class="checkbox">
-                        <input type="checkbox">
+                        <input type="checkbox" required id="c1">
                         I agree to the <a href="#">Google Terms of Service</a> and <a href="#">Privacy Policy</a>
                       </label>
                     </div>
@@ -191,15 +202,158 @@
                   <div class="field">
                     <div class="control">
                       <label class="checkbox">
-                        <input type="checkbox">
+                        <input type="checkbox" required id="c2">
                         Google may use my account information to personalize +1's on content and ad's on non Google websites. <a href="#">About Personalization</a>
                       </label>
                     </div>
                   </div>
+                  <div class="buttons is-right">
+                    <input class="button is-link" type="button" value="Next step"  onclick="validateForm()">
+                  </div>                          
             </form>
         </div>
         <div class="column is-1">
         </div>
     </div>
+<!--SCRIPTS ARENA-->
+<script>
+function validateForm(){
+  if(document.getElementById("message-head").classList.contains("is-success")){
+        document.getElementById("message-head").classList.remove('is-success');
+        document.getElementById("message-head").classList.add('is-danger');
+  }
+
+var letters = /^[A-Za-z]+$/;
+var letterNumber = /^[0-9a-zA-Z]+$/;
+var numre = /[0-9]/;
+var lowre = /[a-z]/;
+var highre = /[A-Z]/;
+var d= new Date();
+
+var myform=document.forms["myform"];
+var fname=myform["fname"].value;
+var lname=myform["lname"].value;
+var uname=myform["uname"].value;
+var pwd=myform["pwd"].value;
+var cpwd=myform["cpwd"].value;
+var mm=parseInt(myform["mm"].value,10);
+var dd=parseInt(myform["dd"].value,10);
+var yy=parseInt(myform["yy"].value,10);
+console.log(mm);
+console.log(dd);
+console.log(yy);
+var gender=document.getElementById("gender").value;
+var phone=myform["phone"].value;
+var oldmail=myform["oldmail"].value;
+var entercap=myform["entercap"].value;
+var location=document.getElementById("location").value;
+
+if(!fname.match(letters)){
+        document.getElementById("mymessage").innerHTML="First Name should contain only alphabets";
+        document.getElementById("message-head").style.visibility="visible";
+        document.forms["myform"]["fname"].focus();
+        return false
+    }
+else if(!lname.match(letters)){
+        document.getElementById("mymessage").innerHTML="Last Name should contain only alphabets";
+        document.getElementById("message-head").style.visibility="visible";
+        document.forms["myform"]["lname"].focus();
+        return false
+    }
+else if(!uname.match(letterNumber)){
+        document.getElementById("mymessage").innerHTML="Username should contain only alphabets and numbers";
+        document.getElementById("message-head").style.visibility="visible";
+        document.forms["myform"]["uname"].focus();
+        return false
+    }
+else if(pwd.length<6){
+        document.getElementById("mymessage").innerHTML="Password must contain atleast 6 characters";
+        document.getElementById("message-head").style.visibility="visible";
+        document.forms["myform"]["pwd"].focus();
+        return false
+}
+      
+else if(!numre.test(pwd)) {
+        document.getElementById("mymessage").innerHTML="Password must contain atleast 1 number";
+        document.getElementById("message-head").style.visibility="visible";
+        document.forms["myform"]["pwd"].focus();
+        return false;
+      }
+      
+else if(!lowre.test(pwd)) {
+        document.getElementById("mymessage").innerHTML="Password must contain atleast 1 lowercase character";
+        document.getElementById("message-head").style.visibility="visible";
+        document.forms["myform"]["pwd"].focus();
+        return false;
+      }
+      
+else if(!highre.test(pwd)) {
+        document.getElementById("mymessage").innerHTML="Password must contain atleast 1 uppercase character";
+        document.getElementById("message-head").style.visibility="visible";
+        document.forms["myform"]["pwd"].focus();
+        return false;
+      }
+else if(pwd!=cpwd){
+        document.getElementById("mymessage").innerHTML="Confirm your password correctly";
+        document.getElementById("message-head").style.visibility="visible";
+        document.forms["myform"]["cpwd"].focus();
+        return false;
+}
+else if(isNaN(dd)||isNaN(mm)||isNaN(yy)){
+            document.getElementById("mymessage").innerHTML="Please enter all the fields";
+            document.getElementById("message-head").style.visibility="visible";
+            document.forms["myform"]["dd"].focus();
+            return false;
+}
+else if(dd<=0 || dd>31){
+            document.getElementById("mymessage").innerHTML="Please enter the proper date";
+            document.getElementById("message-head").style.visibility="visible";
+            document.forms["myform"]["dd"].focus();
+            return false;
+    }
+else if(mm<=0 || mm>12){
+            document.getElementById("mymessage").innerHTML="Please enter the proper month";
+            document.getElementById("message-head").style.visibility="visible";
+            document.forms["myform"]["mm"].focus();
+            return false;
+    }
+else if((yy==d.getFullYear() && (mm-1==d.getMonth()) && (dd>d.getDate())) || ((yy==d.getFullYear())&&(mm-1>d.getMonth()))){
+            document.getElementById("mymessage").innerHTML="Date you entered exceeds the present day.";
+            document.getElementById("message-head").style.visibility="visible";
+            document.forms["myform"]["dd"].focus();
+            return false;
+    }
+else if(!(phone.match(/\d/g).length===10)){
+            document.getElementById("mymessage").innerHTML="Phone number should contain 10 DIGITS";
+            document.getElementById("message-head").style.visibility="visible";
+            document.forms["myform"]["phone"].focus();
+            return false;
+}
+else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(oldmail))){
+            document.getElementById("mymessage").innerHTML="Enter a proper EMAIL";
+            document.getElementById("message-head").style.visibility="visible";
+            document.forms["myform"]["oldmail"].focus();
+            return false;
+}
+else if(entercap!="1234"){
+            document.getElementById("mymessage").innerHTML="Enter the proper CAPTCHA";
+            document.getElementById("message-head").style.visibility="visible";
+            document.forms["myform"]["entercap"].focus();
+            return false;
+}
+else if(document.getElementById("c1").checked==false || document.getElementById("c2").checked==false){
+            document.getElementById("mymessage").innerHTML="Checkboxes must be selected.";
+            document.getElementById("message-head").style.visibility="visible";
+            return false;
+}
+else{
+            document.getElementById("mymessage").innerHTML="Successful Submission made";
+            document.getElementById("message-head").classList.remove('is-danger');
+            document.getElementById("message-head").classList.add('is-success');
+            document.getElementById("message-head").style.visibility="visible";  
+
+}
+}
+</script>
 </body>
 </html>

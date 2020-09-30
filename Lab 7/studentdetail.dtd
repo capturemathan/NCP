@@ -1,0 +1,30 @@
+<!--
+ Copyright (c) 2020 | Mathana Kumar S (https://capturemathan.github.io)
+-->
+<!ELEMENT student (name,gender)>
+<!ATTLIST student studentID ID #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT gender (#PCDATA)>
+
+<!--Every Transcript has 0 to 3 Majors and a MAX of 4 Semesters-->
+<!ELEMENT transcript (cgcp,(major?|major,major|major,major,major),(sem?|sem,sem|sem,sem,sem|sem,sem,sem,sem))>
+<!--FORIEGN KEY RELATION TO STUDENTID-->
+<!ATTLIST transcript tstudentID IDREF #IMPLIED>
+<!ELEMENT cgcp (#PCDATA)>
+
+<!--Every Major must have a major name-->
+<!ELEMENT major EMPTY>
+<!ATTLIST major mname PCDATA #REQUIRED>
+
+<!--Every Semester Record can comprise of 0 to 6 ENROLLMENT RECORDS-->
+<!ELEMENT sem (ercd?|ercd,ercd|ercd,ercd,ercd|ercd,ercd,ercd,ercd|ercd,ercd,ercd,ercd,ercd|ercd,ercd,ercd,ercd,ercd,ercd)>
+
+<!--Every Enrollment Record has atleast one completed course-->
+<!ELEMENT ercd (cmpcourse)>
+
+<!--Every Completed Course should have GRADE attribute-->
+<!ELEMENT cmpcourse EMPTY>
+<!ATTLIST cmpcourse grade PCDATA #REQUIRED>
+
+<!--Class List should consist of Student and atleast 1 Transcript for each Student-->
+<!ELEMENT classlist (student,(transcript)+)>

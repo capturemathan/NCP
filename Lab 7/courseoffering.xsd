@@ -1,0 +1,40 @@
+<!--
+ Copyright (c) 2020 | Mathana Kumar S (https://capturemathan.github.io)
+-->
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://capturemathan.github.io"
+xmlns="https://capturemathan.github.io/courseoffering"
+elementFormDefault="qualified">
+    <xs:element name="courseoffering">
+        <xs:complexType>
+        <xs:sequence>
+            <xs:element name="semester">
+                <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                        </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <!--SECTION: ONLY 1 LETTER-->
+            <xs:element name="section">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                    <xs:pattern value="[A-Z]"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <!--INSTRUCTOR: MINIMUM of 2 LETTERS-->
+            <xs:element name="instructor">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                    <xs:whiteSpace value="collapse"/>
+                    <xs:minLength value="2"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <!--CONSENT: DEFAULT FALSE-->
+            <xs:attribute name="consent" type="xs:boolean" default="false"/>
+        </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

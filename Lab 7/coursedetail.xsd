@@ -1,0 +1,43 @@
+<!--
+ Copyright (c) 2020 | Mathana Kumar S (https://capturemathan.github.io)
+-->
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://capturemathan.github.io"
+xmlns="https://capturemathan.github.io/coursedetail"
+elementFormDefault="qualified">
+    <xs:element name="coursedetail">
+        <xs:complexType>
+        <xs:sequence>
+            <!--DEPTPREFIX: RESTRICTING TO 2 or 3 LETTER CODES-->
+            <xs:element name="deptprefix">
+                <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                        <xs:pattern value="([A-Z][A-Z])|([A-Z][A-Z][A-Z])"/>
+                        </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <!--COURSENUMBER: RESTRICTING TO 5 DIGITS-->
+            <xs:element name="coursenum">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                    <xs:pattern value="[0-9][0-9][0-9][0-9][0-9]"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <!--TITLE: RESTRICTING FROM A MIN OF 5 LETTERS TO MAX OF 40 LETTERS-->
+            <xs:element name="coursetitle">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                    <xs:whiteSpace value="collapse"/>
+                    <xs:minLength value="5"/>
+                    <xs:maxLength value="40"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <!--CREDIT: DEFAULT 4-->
+            <xs:attribute name="credit" type="xs:integer" default="4"/>
+        </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

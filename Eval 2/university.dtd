@@ -1,0 +1,59 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT years (year)+>
+
+<!ELEMENT year (sem)+>
+<!ATTLIST year number CDATA #REQUIRED>
+
+<!ELEMENT sem (course)>
+<!ATTLIST sem name CDATA #REQUIRED>
+
+<!ELEMENT course (teacher,room,theory,lab?)>
+<!ATTLIST course
+  students CDATA #IMPLIED
+  sub CDATA #REQUIRED>
+
+<!ELEMENT teacher (#PCDATA)>
+<!ATTLIST teacher>
+
+<!ELEMENT room (#PCDATA)>
+<!ATTLIST room>
+
+<!ELEMENT theory (days,time)>
+<!ATTLIST theory>
+
+<!ELEMENT lab (days,time)>
+<!ATTLIST lab>
+
+<!ELEMENT days (Monday,Tuesday,Wednesday,Thursday,Friday)>
+<!ATTLIST days>
+
+<!ELEMENT Monday (#PCDATA)>
+<!ATTLIST Monday
+  xmlns CDATA #FIXED '0'>
+
+<!ELEMENT Tuesday (#PCDATA)>
+<!ATTLIST Tuesday
+  xmlns CDATA #FIXED '0'>
+
+<!ELEMENT Wednesday (#PCDATA)>
+<!ATTLIST Wednesday
+  xmlns CDATA #FIXED '0'>
+
+<!ELEMENT Thursday (#PCDATA)>
+<!ATTLIST Thursday
+  xmlns CDATA #FIXED '0'>
+
+<!ELEMENT Friday (#PCDATA)>
+<!ATTLIST Friday
+  xmlns CDATA #FIXED '0'>
+
+<!ELEMENT time (start,end)>
+<!ATTLIST time>
+
+<!ELEMENT start (#PCDATA)>
+<!ATTLIST start
+  xmlns CDATA #FIXED '09:00:00'>
+
+<!ELEMENT end (#PCDATA)>
+<!ATTLIST end>

@@ -1,0 +1,89 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="years">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="year" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sem" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="course">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="teacher"/>
+                          <xs:element type="xs:string" name="room"/>
+                          <xs:element name="theory">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="days">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:boolean" name="Monday"/>
+                                      <xs:element type="xs:boolean" name="Tuesday"/>
+                                      <xs:element type="xs:boolean" name="Wednesday"/>
+                                      <xs:element type="xs:boolean" name="Thursday"/>
+                                      <xs:element type="xs:boolean" name="Friday"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="time">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:time" name="start"/>
+                                      <xs:element type="xs:time" name="end"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="lab" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="days">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:boolean" name="Monday"/>
+                                      <xs:element type="xs:boolean" name="Tuesday"/>
+                                      <xs:element type="xs:boolean" name="Wednesday"/>
+                                      <xs:element type="xs:boolean" name="Thursday"/>
+                                      <xs:element type="xs:boolean" name="Friday"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="time">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:time" name="start"/>
+                                      <xs:element type="xs:time" name="end"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="sub" use="required"/>
+                        <xs:attribute type="xs:integer" name="students" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="name" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:integer" name="number" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+<!-- XQUERY (Write a query in XQuery to find the details of all labs that occured in the even semester of 2008.)
+for $x in /years/year[@number=2018]/sem[@name="even"]
+return if ($x/course/lab)
+then $x/course
+else ()
+-->

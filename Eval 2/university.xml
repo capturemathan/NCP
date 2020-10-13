@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <years>
+        <year number="2018">
+            <sem name="odd">
+                <course sub="Introduction to Database Management Systems">
+                    <teacher>Professor Gupta</teacher>
+                    <room>C-402</room>
+                    <theory>
+                        <days>
+                            <Monday>1</Monday>
+                            <Tuesday>0</Tuesday>
+                            <Wednesday>1</Wednesday>
+                            <Thursday>0</Thursday>
+                            <Friday>1</Friday>
+                        </days>
+                        <time>
+                            <start>09:00:00</start>
+                            <end>11:00:00</end>
+                        </time>
+                    </theory>
+                    <lab>
+                        <days>
+                            <Monday>0</Monday>
+                            <Tuesday>0</Tuesday>
+                            <Wednesday>0</Wednesday>
+                            <Thursday>0</Thursday>
+                            <Friday>1</Friday>
+                        </days>
+                        <time>
+                            <start>09:45:00</start>
+                            <end>12:20:00</end>
+                        </time>
+                    </lab>
+                </course>
+            </sem>
+            <sem name="even">
+                <course sub="Advanced Database Management Systems" students="35">
+                    <teacher>Professor Menon</teacher>
+                    <room>C-401</room>
+                    <lab>
+                        <days>
+                            <Monday>1</Monday>
+                            <Tuesday>1</Tuesday>
+                            <Wednesday>0</Wednesday>
+                            <Thursday>1</Thursday>
+                            <Friday>0</Friday>
+                        </days>
+                        <time>
+                            <start>13:10:00</start>
+                            <end>14:00:00</end>
+                        </time>
+                    </lab>
+                </course>
+            </sem>
+        </year>
+        <year number="2019">
+            <sem name="odd">
+                <course sub="Introduction to Database Management Systems" students="63">
+                    <teacher>Dr. Priya</teacher>
+                    <room>C-405</room>
+                    <theory>
+                        <days>
+                            <Monday>0</Monday>
+                            <Tuesday>1</Tuesday>
+                            <Wednesday>0</Wednesday>
+                            <Thursday>1</Thursday>
+                            <Friday>0</Friday>
+                        </days>
+                        <time>
+                            <start>15:00:00</start>
+                            <end>16:30:00</end>
+                        </time>
+                    </theory>
+                    <lab>
+                        <days>
+                            <Monday>0</Monday>
+                            <Tuesday>0</Tuesday>
+                            <Wednesday>0</Wednesday>
+                            <Thursday>1</Thursday>
+                            <Friday>0</Friday>
+                        </days>
+                        <time>
+                            <start>14:10:00</start>
+                            <end>16:00:00</end>
+                        </time>
+                    </lab>
+                </course>
+            </sem>
+            <sem name="even">
+                <course sub="Advanced Database management Systems">
+                    <teacher>Professor Shankar</teacher>
+                    <room>C-405</room>
+                    <lab>
+                        <days>
+                            <Monday>1</Monday>
+                            <Tuesday>0</Tuesday>
+                            <Wednesday>1</Wednesday>
+                            <Thursday>0</Thursday>
+                            <Friday>1</Friday>
+                        </days>
+                        <time>
+                            <start>09:00:00</start>
+                            <end>10:00:00</end>
+                        </time>
+                    </lab>
+                </course>
+            </sem>
+        </year>
+    </years>
